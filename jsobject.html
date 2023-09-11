@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS OBJECT</title>
+  </head>
+  <body>
+    <script>
+      function showname() {
+        document.write("The name is:" + this.name + "</br>");
+      }
+      // USER DEFINED OBJECT
+
+      // 1: create direct instances of class
+      //  calling function
+      var Aruna = {
+        name: "Aruna",
+        age: 25,
+        address: "kathmandu",
+        showDetail: showname,
+      };
+      Aruna.showDetail();
+      //without calling function
+      var ram = { name: "ram", age: 25, address: "kathmandu" };
+      document.write("The name is:" + ram.name + "</br>");
+      // es6 bata chai direct class banauna milxa but es5 ma function bata banauna parxa. es6 is latest model in JS
+      // working garda we use es6
+      //    2.   create class using function i.e through object constructor-derai object banauna parye used it
+      function Person(n, a, ad) {
+        this.name = n;
+        this.age = a;
+        this.address = ad;
+        this.showDetail = showname;
+      }
+      var hari = new Person("hari", 25, "kathmandu");
+      hari.showDetail();
+    </script>
+  </body>
+</html>
