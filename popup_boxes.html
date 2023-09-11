@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="deleteRow()">Delete Row?</button>
+    <button ondblclick="showPrompt()">show prompt</button>
+    <script>
+        alert('Welcome to page');
+
+        function showPrompt() {
+            var name = prompt("Tero naam k ho ?");
+            document.write("la welcome xa talai " + name);
+        }
+
+        function deleteRow() {
+            var result = confirm('Do you want to delete ?');
+            if (result == true) {
+                document.write("Deleted");
+            }
+
+        }
+    </script>
+</body>
+
+</html>
