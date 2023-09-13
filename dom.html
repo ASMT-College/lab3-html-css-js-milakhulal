@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <div id="dynamic"></div>
+    <div onclick="hideTable()">Hide</div>
+    <div onclick="showTable()">Show</div>
+    <div onmouseover="changeTableColor()">Change color</div>
+    <div onmouseleave="resetTableColor()">Reset color</div>
+    <script>
+      var myDiv = document.getElementById("dynamic");
+      var myTable = document.createElement("Table");
+      var myHeadingRow = document.createElement("tr"); //it creates row directly that is using js object rather than coding through html table
+      var myHeadingColumn1 = document.createElement("td"); //it creates column directly
+      var myHeadingColumn2 = document.createElement("td");
+      myHeadingColumn1.innerHTML = "Name";
+      myHeadingColumn2.innerHTML = "age";
+      myHeadingRow.appendChild(myHeadingColumn1);
+      myHeadingRow.appendChild(myHeadingColumn2);
+      myTable.appendChild(myHeadingRow);
+      myDiv.appendChild(myTable);
+      myHeadingColumn1.addEventListener("click", sayHi);
+      function sayHi() {
+        alert("Hi");
+      }
+
+      myHeadingColumn2.setAttribute("ondblclick", "sayAge()");
+      function sayAge() {
+        alert("Age");
+      }
+
+      function hideTable() {
+        var myDiv = document.getElementById("dynamic");
+        myDiv.style.display = "none";
+      }
+
+      function showTable() {
+        var myDiv = document.getElementById("dynamic");
+        myDiv.style.display = "block";
+      }
+
+      function changeTableColor() {
+        var myDiv = document.getElementById("dynamic");
+        myDiv.style.backgroundColor = "green";
+      }
+
+      function resetTableColor() {
+        var myDiv = document.getElementById("dynamic");
+        myDiv.style.backgroundColor = "pink";
+      }
+    </script>
+  </body>
+</html>
+
+create dynamictable using dom function(when table data is provided) name:john
+,age:20,email:abc@hotgmail.com form methods ra property ra events ni lekha hai

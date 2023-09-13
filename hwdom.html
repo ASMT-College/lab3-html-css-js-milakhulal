@@ -1,0 +1,36 @@
+<!-- create dynamic table using dom when table data is provided as below:
+name=john age=20 email=abc@hotmail.com
+name=hari age=40 email=hari@hotmail.com -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="dynamic_table"></div>
+    <script type="text/javascript">
+      var myTableDiv = document.getElementById("dynamic_table");
+
+      var tableData = [
+        { names: "Mila", age: 21, email: "gmk@hotmail.com" },
+        { names: "Sabin", age: 30, email: "sgd@hotmail.com" },
+      ];
+      var table = document.createElement("table");
+      table.border = "2";
+      for (i = 0; i < tableData.length; i++) {
+        var tr = document.createElement("tr");
+        var td_name = document.createElement("td");
+        td_name.appendChild(document.createTextNode(tableData[i].names));
+        var td_age = document.createElement("td");
+        td_age.appendChild(document.createTextNode(tableData[i].age));
+        tr.appendChild(td_name);
+        tr.appendChild(td_age);
+        table.appendChild(tr);
+      }
+      myTableDiv.appendChild(table);
+    </script>
+  </body>
+</html>
