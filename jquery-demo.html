@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=>, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#myDiv").hide();
+        $("#myDiv").click(function () {
+          alert("Hi this event is defined from jQuery");
+        });
+        $("#myDiv").on("mouseenter", function () {
+          $("body").css("background-color", "pink");
+        });
+        $("#myDiv").on("mouseleave", function () {
+          $("body").css("background-color", "white");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="myDiv">Mila KHulal</div>
+    <div onclick="$('#myDiv').show()">Show</div>
+    <div onclick="$('#myDiv').hide()">Hide</div>
+  </body>
+</html>
